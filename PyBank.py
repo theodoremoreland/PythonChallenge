@@ -47,17 +47,21 @@ def create_results_string(months_list, profits_list, profit_changes_per_month_li
     """
     """
 
+    dollars_template = '${:,.2f}'
     num_of_months = len(months_list)
-    total_profit = sum(profits_list)
+    total_profit = dollars_template.format(sum(profits_list))
     max_gain_index = profit_changes_per_month_list.index(max(profit_changes_per_month_list))
     max_loss_index = profit_changes_per_month_list.index(min(profit_changes_per_month_list))
+    average_change = dollars_template.format(average_change)
+    greatest_increase_in_profits = dollars_template.format(profit_changes_per_month_list[max_gain_index])
+    greatest_decrease_in_profits = dollars_template.format(profit_changes_per_month_list[max_loss_index])
 
     results = f"""
     Total Months: {num_of_months} 
-    Total: ${total_profit}
-    Average Change: ${average_change} 
-    Greatest Increase in Profits: {months_list[max_gain_index]} (${profit_changes_per_month_list[max_gain_index]})
-    Greatest Decrease in Profits: {months_list[max_loss_index]} (${profit_changes_per_month_list[max_loss_index]})
+    Total: {total_profit}
+    Average Change: {average_change} 
+    Greatest Increase in Profits: {months_list[max_gain_index]} ({greatest_increase_in_profits})
+    Greatest Decrease in Profits: {months_list[max_loss_index]} ({greatest_decrease_in_profits})
     """
 
     return results
