@@ -27,7 +27,7 @@ Each script prints the calculations to the terminal and exports the calculations
 <img src="presentation/2.PNG" width="900">
 
 # PyPoll (terminal ouput)
-<img src="presentation/3.PNG" width="900">
+<img src="presentation/3.PNG" width="400">
 
 # PyPoll (output .txt file)
 <img src="presentation/4.PNG" width="900">
